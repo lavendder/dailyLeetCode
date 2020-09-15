@@ -23,6 +23,7 @@ func TestOffer03()  {
 	fmt.Println(findRepeatNumber([]int{2, 3, 1, 0, 2, 5, 3}))
 }
 
+//采用字典 时间复杂O(n) 空间O(n)
 func findRepeatNumber(nums []int) int {
 	m := make(map[int]int,1)
 	if len(nums) == 0{
