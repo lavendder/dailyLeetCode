@@ -71,6 +71,12 @@ func findNumberIn2DArray1(matrix [][]int, target int) bool {
 	return false
 }
 
+/*
+二叉搜索树
+执行用时：
+28 ms, 在所有 Go 提交中击败了93.16%的用户
+内存消耗：6.6 MB, 在所有 Go 提交中击败了33.62%的用户
+*/
 func findNumberIn2DArray(matrix [][]int, target int) bool {
 	l1 := len(matrix)
 	if l1 <= 0 || l1 > 1000 {
