@@ -47,7 +47,7 @@ func TestOffer4() {
 执行用时：32 ms, 在所有 Go 提交中击败了67.98%的用户
 内存消耗：6.6 MB, 在所有 Go 提交中击败了33.62%的用户
 */
-func findNumberIn2DArray(matrix [][]int, target int) bool {
+func findNumberIn2DArray1(matrix [][]int, target int) bool {
 	if l1 := len(matrix); l1 <= 0 || l1 > 1000 {
 		return false
 	}
@@ -67,6 +67,34 @@ func findNumberIn2DArray(matrix [][]int, target int) bool {
 				return true
 			}
 		}
+	}
+	return false
+}
+
+func findNumberIn2DArray(matrix [][]int, target int) bool {
+	l1 := len(matrix)
+	if l1 <= 0 || l1 > 1000 {
+		return false
+	}
+	l2 := len(matrix[0])
+	if l2 <= 0 || l2 > 1000 {
+		return false
+	}
+	j := l2 - 1
+	i := 0
+	for i < l1 {
+		if i < 0 || j < 0 {
+			break
+		}
+		if matrix[i][j] == target {
+			return true
+		}
+		if matrix[i][j] < target {
+			i++
+		} else if matrix[i][j] > target {
+			j--
+		}
+
 	}
 	return false
 }
