@@ -56,5 +56,5 @@ func TestQuestion1385() {
 
 }
 func findTheDistanceValue(arr1 []int, arr2 []int, d int) int {
-
+	return 0
 }
