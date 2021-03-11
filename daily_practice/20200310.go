@@ -1,5 +1,7 @@
 package daily_practice
 
+import "fmt"
+
 /*
 基本计算器
 只有加减运算
@@ -34,4 +36,8 @@ func calculate(s string) (ans int) {
 
 	}
 	return ans
+}
+
+func TestCalculate() {
+	fmt.Println(calculate("1-(9-(2+3)-4)"))
 }
