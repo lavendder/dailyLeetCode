@@ -41,23 +41,26 @@ func (this *MinStack) Push(val int) {
 
 func (this *MinStack) Pop() {
 	if len(this.StackMin) == 0 {
-		panic("len(this.StackMin) < 0")
+		return
 	}
+	value := this.StackData[len(this.StackData)-1]
 	this.StackData = this.StackData[:len(this.StackData)-1]
-	this.StackMin = this.StackMin[:len(this.StackMin)-1]
+	if value == this.StackMin[len(this.StackMin)-1] {
+		this.StackMin = this.StackMin[:len(this.StackMin)-1]
+	}
 	return
 }
 
 func (this *MinStack) Top() int {
 	if len(this.StackData) == 0 {
-		panic("len(this.StackData) < 0")
+		return 0
 	}
 	return this.StackData[len(this.StackData)-1]
 }
 
 func (this *MinStack) GetMin() int {
 	if len(this.StackMin) == 0 {
-		panic("len(this.StackMin) < 0")
+		return 0
 	}
 	return this.StackMin[len(this.StackMin)-1]
 }
